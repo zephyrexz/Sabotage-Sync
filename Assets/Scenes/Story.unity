@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 153676891}
   - component: {fileID: 153676890}
   m_Layer: 5
-  m_Name: juli (1)
+  m_Name: Sera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3551195264146258318, guid: fa7b484584cde974685c752e9a70abe6, type: 3}
+  m_Sprite: {fileID: 2712110500590790419, guid: a8a4cb55d30155a4da108d7f2bfa1f29, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 1017973271}
   - component: {fileID: 1017973270}
   m_Layer: 5
-  m_Name: T-juli (1)
+  m_Name: T-Sera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 1030855582}
   - component: {fileID: 1030855581}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: background 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3452526585029509458, guid: 8af353fb34d33af45b48377d5c09d31b, type: 3}
+  m_Sprite: {fileID: 2357455048183124705, guid: bca0fd82dac5eed44addd009e828901c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
