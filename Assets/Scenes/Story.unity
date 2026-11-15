@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 366670448}
   - component: {fileID: 366670447}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: sera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 1071191396}
   - component: {fileID: 1071191395}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: juli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

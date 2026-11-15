@@ -1,81 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI; // Wajib ditambahkan agar kita bisa mengatur UI Teks
-using UnityEngine.SceneManagement; // Wajib agar bisa berpindah Scene
 
 public class GameManager : MonoBehaviour
 {
-    // Ini namanya Singleton. Fungsinya agar script ini bisa dipanggil
-    // dari mana saja tanpa perlu drag-and-drop.
-    public static GameManager instance; 
+    public static GameManager Instance;
 
-    [Header("Data Game")]
-    public int poin = 0;
-    public int nyawa = 3;
+    public int targetFragments = 20;
+    public int currentFragments = 0;
 
-    [Header("UI Teks")]
-    public Text teksPoin;
-    public Text teksNyawa;
-    public GameObject panelGameOver;
+    public bool RoundEnded = false;
 
-    [Header("Pengaturan Scene")]
-    public string namaSceneGameplay;
-    public string namaSceneMenu;
+    public GameObject winnerWindow;
+    public GameObject gameOverWindow;
 
-    void Awake()
+    private void Awake()
     {
-        // Menyeting Singleton saat game baru mulai
-        if (instance == null) {
-            instance = this;
-        }
+        Instance = this;
     }
 
-    void Start()
+    private void Start()
     {
-        Time.timeScale = 1; //Agar waktu game normal dan dapat bergerak
-        UpdateUI(); // Tampilkan UI pertama kali
+        winnerWindow.SetActive(false);
+        gameOverWindow.SetActive(false);
     }
 
-    // Fungsi untuk menambah skor
-    public void TambahPoin(int nilai)
+    public void AddFragment()
     {
-        poin += nilai;
-        UpdateUI();
-    }
+        if (RoundEnded) return;
 
-    // Fungsi untuk mengurangi nyawa
-    public void KurangiNyawa(int nilai)
-    {
-        nyawa -= nilai;
-        UpdateUI();
+        currentFragments++;
 
-        // Mengecek apakah nyawa habis
-        if (nyawa <= 0)
+        if (currentFragments >= targetFragments)
         {
-            Debug.Log("GAME OVER!");
-            Time.timeScale = 0;
-            panelGameOver.SetActive(true);
+            RoundEnded = true;
+            winnerWindow.SetActive(true);
         }
     }
 
-    // Fungsi untuk menyegarkan tampilan teks di layar
-    void UpdateUI()
+    public void PlayerDied()
     {
-        teksPoin.text = "Poin: " + poin;
-        teksNyawa.text = "Nyawa: " + nyawa;
-    }
+        if (RoundEnded) return;
 
-    public void TombolRestart()
-    {
-        // Me-load ulang scene gameplay
-        SceneManager.LoadScene(namaSceneGameplay);
+        RoundEnded = true;
+        gameOverWindow.SetActive(true);
     }
-
-    public void TombolMainMenu()
-    {
-        // Pindah ke scene menu utama
-        SceneManager.LoadScene(namaSceneMenu);
-    }
-
 }
