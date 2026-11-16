@@ -4,13 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public string gameSceneName = "GameScene";
+    public static int selectedCharacterIndex = 0;
 
-    public void SelectCharacter(int characterIndex)
+    public void SelectCharacter(int index)
     {
-        PlayerPrefs.SetInt("SelectedCharacter", characterIndex);
-        PlayerPrefs.Save();
-
-        SceneManager.LoadScene(gameSceneName);
+        selectedCharacterIndex = index;
+        SceneManager.LoadScene("Gameplay");
     }
 }
